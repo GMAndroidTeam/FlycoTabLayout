@@ -372,7 +372,7 @@ public class SlidingTabLayout extends HorizontalScrollView implements ViewPager.
             TextView tab_title = (TextView) currentTabView.findViewById(R.id.tv_tab_title);
             mTextPaint.setTextSize(mTextsize);
             float textWidth = mTextPaint.measureText(tab_title.getText().toString());
-            margin = (right - left - textWidth - mIndicatorPadding) / 2;
+            margin = (right - left - textWidth - mIndicatorPadding * 2) / 2;
         }
 
         if (this.mCurrentTab < mTabCount - 1) {
@@ -388,7 +388,7 @@ public class SlidingTabLayout extends HorizontalScrollView implements ViewPager.
                 TextView next_tab_title = (TextView) nextTabView.findViewById(R.id.tv_tab_title);
                 mTextPaint.setTextSize(mTextsize);
                 float nextTextWidth = mTextPaint.measureText(next_tab_title.getText().toString());
-                float nextMargin = (nextTabRight - nextTabLeft - nextTextWidth - mIndicatorPadding) / 2;
+                float nextMargin = (nextTabRight - nextTabLeft - nextTextWidth - mIndicatorPadding * 2) / 2;
                 margin = margin + mCurrentPositionOffset * (nextMargin - margin);
             }
         }
